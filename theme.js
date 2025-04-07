@@ -1,27 +1,43 @@
 /**
- * Toggles the website theme between light and dark modes.
+ * Toggles between light and dark themes for the website.
  * 
- * - Retrieves the current theme from localStorage or defaults to "light".
- * - Applies the "dark-mode" class to the document if the current theme is "dark".
- * - Listens for a click event on the theme toggle button to switch themes.
- * - Updates the theme in localStorage based on the current state.
+ * - Retrieves the current theme preference from localStorage.
+ * - Sets the initial theme and toggle button icon based on the saved preference.
+ * - Adds an event listener to the toggle button to switch themes and update the preference in localStorage.
  * 
- * @constant {HTMLElement} toggle - The button element used to toggle the theme.
- * @constant {string} currentTheme - The current theme, either "light" or "dark".
+ * Elements:
+ * - `#theme-toggle`: The button element used to toggle the theme.
+ * 
+ * Local Storage:
+ * - Key: `theme`
+ *   - Value: `"dark"` for dark mode.
+ *   - Value: `"light"` for light mode.
+ * 
+ * Behavior:
+ * - If the theme is set to "dark", the `dark-mode` class is added to the root element (`<html>`),
+ *   and the toggle button displays a sun icon (☀️).
+ * - If the theme is set to "light" or not set, the `dark-mode` class is removed,
+ *   and the toggle button displays a moon icon (🌙).
+ * - Clicking the toggle button switches the theme, updates the icon, and saves the preference.
  */
-
 const toggle = document.getElementById("theme-toggle");
-const currentTheme = localStorage.getItem("theme") || "light";
+const currentTheme = localStorage.getItem("theme");
 
+// Set initial theme and icon
 if (currentTheme === "dark") {
   document.documentElement.classList.add("dark-mode");
+  toggle.textContent = "☀️";
+} else {
+  toggle.textContent = "🌙";
 }
 
+// Toggle theme on click
 toggle.addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark-mode");
+  const isDark = document.documentElement.classList.toggle("dark-mode");
 
-  const theme = document.documentElement.classList.contains("dark-mode")
-    ? "dark"
-    : "light";
-  localStorage.setItem("theme", theme);
+  // Save preference
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  // Change icon
+  toggle.textContent = isDark ? "☀️" : "🌙";
 });
