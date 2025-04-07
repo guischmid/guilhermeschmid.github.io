@@ -72,28 +72,28 @@ body {
 }
 
 /* Dark Mode */
-html.dark-mode body {
+body.dark-mode {
   background-color: #121212;
   color: #e5e5e5;
 }
 
-html.dark-mode .hero-name {
+body.dark-mode .hero-name {
   color: #f4f4f4;
 }
 
-html.dark-mode .tagline {
+body.dark-mode .tagline {
   color: #aaa;
 }
 
-html.dark-mode .hero-image {
+body.dark-mode .hero-image {
   box-shadow: 0 4px 30px rgba(255, 255, 255, 0.05);
 }
 
-html.dark-mode .links a {
+body.dark-mode .links a {
   color: #8ab4f8;
 }
 
-html.dark-mode .links a:hover {
+body.dark-mode .links a:hover {
   color: #4f83f1;
 }
 
