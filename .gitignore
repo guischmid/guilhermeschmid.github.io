@@ -1,0 +1,27 @@
+# macOS system files
+.DS_Store
+
+# VS Code settings (if you're using it)
+.vscode/
+
+# Node modules (if you use npm later)
+node_modules/
+
+# Log files
+*.log
+
+# Cache or temp folders
+*.tmp
+*.swp
+*.swo
+
+# OS or archive trash
+Thumbs.db
+ehthumbs.db
+
+# Ignore any hidden files or folders (optional)
+.*~
+
+# Optional: ignore any non-website folders if needed
+# !website/
+
