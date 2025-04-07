@@ -71,6 +71,34 @@ body {
   color: #1e3a8a;
 }
 
+.personal-links {
+  margin-top: 2rem;
+}
+
+.personal-links a {
+  display: inline-block;
+  margin: 0.4rem 0.7rem;
+  text-decoration: none;
+  font-weight: 500;
+  color: #1db954; /* Spotify grün, passt gut */
+  transition: color 0.2s ease;
+}
+
+.personal-links a:hover {
+  color: #12833a;
+}
+
+.personal-links i {
+  margin-right: 0.4rem;
+}
+.personal-links img.icon {
+  height: 1em;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+  filter: invert(1);
+}
+
+
 /* ------------ DARK MODE ------------ */
 body.dark-mode {
   background-color: #121212;
@@ -210,3 +238,4 @@ body.dark-mode .btn__indicator {
 body.dark-mode .btn__icon {
   color: var(--dark-icon-color);
 }
+
