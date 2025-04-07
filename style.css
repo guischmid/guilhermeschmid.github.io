@@ -1,3 +1,9 @@
+/* 
+ * Description: This file contains the CSS styles for the website.
+ * Author: Gigi
+ * Last Modified: [Last Modified Date]
+ * Notes: Ensure to update styles here to reflect changes across the website.
+ */
 /* style.css */
 html {
   scroll-behavior: smooth;
@@ -61,32 +67,31 @@ body {
   color: #1e3a8a;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #e5e5e5;
-  }
-
-  .hero-name {
-    color: #f4f4f4;
-  }
-
-  .tagline {
-    color: #aaa;
-  }
-
-  .hero-image {
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.05);
-  }
-
-  .links a {
-    color: #8ab4f8;
-  }
-
-  .links a:hover {
-    color: #4f83f1;
-  }
+html.dark-mode {
+  background-color: #121212;
+  color: #e5e5e5;
 }
+
+html.dark-mode .hero-name {
+  color: #f4f4f4;
+}
+
+html.dark-mode .tagline {
+  color: #aaa;
+}
+
+html.dark-mode .hero-image {
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.05);
+}
+
+html.dark-mode .links a {
+  color: #8ab4f8;
+}
+
+html.dark-mode .links a:hover {
+  color: #4f83f1;
+}
+
 
 body {
   opacity: 0;
@@ -127,4 +132,18 @@ body {
     margin: 0.4rem 0.7rem;
     font-size: 1rem;
   }
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  color: inherit;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.2);
 }
