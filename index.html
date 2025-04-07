@@ -4,14 +4,20 @@ This is the main HTML file for the website.
 The document's language is set to German (lang="de").
 -->
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guilherme Schmid</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap"
+    rel="stylesheet">
   <link rel="icon" href="attachments/pictures/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    crossorigin="anonymous" />
+
 </head>
+
 <body>
   <main class="container">
     <h1 class="hero-name">Guilherme Schmid</h1>
@@ -23,9 +29,16 @@ The document's language is set to German (lang="de").
       <a href="https://linkedin.com/in/deinname" target="_blank">LinkedIn</a>
       <a href="mailto:guilhermeschmid@pm.me">E-Mail</a>
     </nav>
-    <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+    <div class="btn" id="theme-toggle">
+      <div class="btn__indicator">
+        <div class="btn__icon-container">
+          <i class="btn__icon fa-solid fa-sun"></i>
+        </div>
+      </div>
+    </div>
+
   </main>
 </body>
 <script src="theme.js"></script>
-</html>
 
+</html>

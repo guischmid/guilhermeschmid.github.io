@@ -1,26 +1,32 @@
-// Get the theme toggle button element
 const toggle = document.getElementById("theme-toggle");
-
-// Retrieve the current theme from localStorage
+const icon = toggle.querySelector(".btn__icon");
 const currentTheme = localStorage.getItem("theme");
 
-// Check if the current theme is "dark"
+// Initial
 if (currentTheme === "dark") {
-    // Apply dark mode by adding the "dark-mode" class to the body
-    document.body.classList.add("dark-mode");
-    // Set the toggle button text to a sun emoji (indicating light mode toggle)
-    toggle.textContent = "☀️";
-} else {
-    // Set the toggle button text to a moon emoji (indicating dark mode toggle)
-    toggle.textContent = "🌙";
+  document.body.classList.add("dark-mode");
+  icon.classList.replace("fa-sun", "fa-moon");
 }
 
-// Add a click event listener to the toggle button
+// Toggle
 toggle.addEventListener("click", () => {
-    // Toggle the "dark-mode" class on the body and store the result
-    const isDark = document.body.classList.toggle("dark-mode");
-    // Save the updated theme preference in localStorage
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-    // Update the toggle button text based on the current theme
-    toggle.textContent = isDark ? "☀️" : "🌙";
+  const isDark = document.body.classList.toggle("dark-mode");
+
+  // Animation
+  icon.classList.add("animated");
+
+  // Icon wechseln
+  if (isDark) {
+    icon.classList.replace("fa-sun", "fa-moon");
+  } else {
+    icon.classList.replace("fa-moon", "fa-sun");
+  }
+
+  // Speichern
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  // Animation zurücksetzen
+  setTimeout(() => {
+    icon.classList.remove("animated");
+  }, 500);
 });
