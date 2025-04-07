@@ -20,24 +20,45 @@
  *   and the toggle button displays a moon icon (🌙).
  * - Clicking the toggle button switches the theme, updates the icon, and saves the preference.
  */
+
+// Icon constants
+const ICON_SUN = "☀️";
+const ICON_MOON = "🌙";
 const toggle = document.getElementById("theme-toggle");
-const currentTheme = localStorage.getItem("theme");
+const currentTheme = localStorage.getItem("theme") || "light";
 
 // Set initial theme and icon
 if (currentTheme === "dark") {
   document.documentElement.classList.add("dark-mode");
-  toggle.textContent = "☀️";
+  toggle.textContent = ICON_SUN;
 } else {
-  toggle.textContent = "🌙";
+  toggle.textContent = ICON_MOON;
 }
 
 // Toggle theme on click
-toggle.addEventListener("click", () => {
-  const isDark = document.documentElement.classList.toggle("dark-mode");
+if (toggle) {
+  toggle.addEventListener("click", () => {
+    // Toggle the "dark-mode" class and store the result.
+    // `isDark` will be true if the "dark-mode" class is now applied, false otherwise.
+// Utility function to debounce calls
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
 
-  // Save preference
+// Save preference with debounce
+const saveThemePreference = debounce(() => {
   localStorage.setItem("theme", isDark ? "dark" : "light");
+}, 300);
 
-  // Change icon
-  toggle.textContent = isDark ? "☀️" : "🌙";
-});
+saveThemePreference();
+    // Save preference
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    // Change icon
+    toggle.textContent = isDark ? "☀️" : "🌙";
+  });
+}
