@@ -1,7 +1,7 @@
 /* 
- * Description: This file contains the CSS styles for the website.
+ * Description: Cleaned and corrected CSS styles for the personal site.
  * Author: Gigi
- * Last Modified: 07.04.25
+ * Last Modified: 09.04.25
  */
 
 /* ------------ BASE ------------ */
@@ -55,51 +55,83 @@ body {
   margin-bottom: 2rem;
 }
 
-.links {
-  margin-top: 1.5rem;
+/* ------------ LINK CARD ------------ */
+.link-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.8rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  max-width: 500px;
+  margin: 3rem auto 0 auto;
+  backdrop-filter: blur(4px);
+  text-align: left;
 }
 
-.links a {
-  margin: 0 1rem;
-  text-decoration: none;
+.link-card h3 {
+  font-size: 1.1rem;
+  margin: 0 0 1.2rem 0;
+  color: #ccc;
+  font-weight: 600;
+  padding-left: 0.1rem;
+}
+
+.link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.link-list li {
+  display: flex;
+  align-items: center;
+}
+
+.link-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   font-weight: 500;
-  color: #4f46e5;
-  transition: color 0.2s;
-}
-
-.links a:hover {
-  color: #1e3a8a;
-}
-
-.personal-links {
-  margin-top: 2rem;
-}
-
-.personal-links a {
-  display: inline-block;
-  margin: 0.4rem 0.7rem;
+  font-size: 1rem;
   text-decoration: none;
-  font-weight: 500;
-  color: #1db954;
-  /* Spotify grün, passt gut */
+  color: #9bbcff;
   transition: color 0.2s ease;
 }
 
-.personal-links a:hover {
-  color: #12833a;
+.link-list a:hover {
+  color: #4f83f1;
 }
 
-.personal-links i {
-  margin-right: 0.4rem;
-}
-
-.personal-links img.icon {
-  height: 1em;
+.link-list i,
+.link-list img.icon {
+  height: 1.1rem;
+  width: 1.1rem;
   vertical-align: middle;
-  margin-right: 0.4rem;
-  filter: invert(1);
+  display: block;
 }
 
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1rem;
+  width: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.icon-svg {
+  height: 100%;
+  width: 100%;
+  display: block;
+  filter: grayscale(1) brightness(1.2);
+  opacity: 0.85;
+  border-radius: 50%;
+}
 
 /* ------------ DARK MODE ------------ */
 body.dark-mode {
@@ -119,12 +151,26 @@ body.dark-mode .hero-image {
   box-shadow: 0 4px 30px rgba(255, 255, 255, 0.05);
 }
 
-body.dark-mode .links a {
-  color: #8ab4f8;
+body.dark-mode .link-card {
+  background-color: rgba(30, 30, 40, 0.4);
 }
 
-body.dark-mode .links a:hover {
+body.dark-mode .link-card h3 {
+  color: #ccc;
+}
+
+body.dark-mode .link-list a {
+  color: #9bbcff;
+}
+
+body.dark-mode .link-list a:hover {
   color: #4f83f1;
+}
+
+body.dark-mode .link-list img.icon,
+body.dark-mode .icon-svg {
+  filter: invert(1) grayscale(1) brightness(1.1);
+  opacity: 0.9;
 }
 
 /* ------------ ANIMATION ------------ */
@@ -133,6 +179,7 @@ body.dark-mode .links a:hover {
     opacity: 1;
   }
 }
+
 
 /* ------------ RESPONSIVE ------------ */
 @media (max-width: 480px) {
@@ -156,23 +203,45 @@ body.dark-mode .links a:hover {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
-
-  .links a {
-    display: inline-block;
-    margin: 0.4rem 0.7rem;
-    font-size: 1rem;
-  }
 }
 
-/* ------------ TOGGLE SWITCH BUTTON ------------ */
-:root {
-  --color: #9176FF;
-  --dark-color: #2b2b2b;
-  --dark-icon-color: #fff;
-  --light-color: #f7f7f7;
-  --light-icon-color: #FFDE59;
+/* ------------ BLOG HIGHLIGHT ------------ */
+.blog-highlight {
+  margin-top: 3rem;
+  text-align: center;
 }
 
+.blog-title a {
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  color: #4f46e5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-title a:hover {
+  color: #1e3a8a;
+}
+
+.blog-blurb {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+body.dark-mode .blog-title a {
+  color: #9bbcff;
+}
+
+body.dark-mode .blog-title a:hover {
+  color: #4f83f1;
+}
+
+body.dark-mode .blog-blurb {
+  color: #aaa;
+}
+
+/* ------------ DARK MODE TOGGLE BUTTON ------------ */
 .btn {
   background-color: #fff;
   width: 4.5rem;
@@ -180,8 +249,8 @@ body.dark-mode .links a:hover {
   border-radius: 10em;
   padding: 0 0.3rem;
   box-shadow: inset 0 8px 40px rgba(0, 0, 0, .05),
-    inset 0 4px 8px rgba(0, 0, 0, .05),
-    inset 0 -2px 4px rgba(0, 0, 0, .05);
+              inset 0 4px 8px rgba(0, 0, 0, .05),
+              inset 0 -2px 4px rgba(0, 0, 0, .05);
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -189,6 +258,7 @@ body.dark-mode .links a:hover {
   align-items: center;
   cursor: pointer;
   z-index: 1000;
+  animation: fadeInToggle 1s ease-in-out forwards;
 }
 
 .btn__indicator {
@@ -198,7 +268,7 @@ body.dark-mode .links a:hover {
   border-radius: 50%;
   position: absolute;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 
 .btn__icon-container {
@@ -210,12 +280,23 @@ body.dark-mode .links a:hover {
 }
 
 .btn__icon {
-  color: var(--light-icon-color);
+  color: #FFDE59;
   font-size: 1.2rem;
 }
 
 .btn__icon.animated {
   animation: spin 0.5s;
+}
+
+@keyframes fadeInToggle {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes spin {
@@ -224,149 +305,18 @@ body.dark-mode .links a:hover {
   }
 }
 
-/* Darkmode Varianten */
 body.dark-mode .btn {
   box-shadow: inset 0 8px 60px rgba(0, 0, 0, .3),
-    inset 8px 0 8px rgba(0, 0, 0, .2),
-    inset 0 -4px 4px rgba(0, 0, 0, .2);
+              inset 8px 0 8px rgba(0, 0, 0, .2),
+              inset 0 -4px 4px rgba(0, 0, 0, .2);
 }
 
 body.dark-mode .btn__indicator {
   transform: translateX(2rem);
-  background-color: var(--dark-color);
+  background-color: #2b2b2b;
   box-shadow: 0 4px 20px rgba(0, 0, 0, .3);
 }
 
 body.dark-mode .btn__icon {
-  color: var(--dark-icon-color);
-}
-
-.link-section {
-  margin-top: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.primary-links,
-.social-links {
-  display: flex;
-  gap: 1.2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.primary-links a,
-.social-links a {
-  font-weight: 500;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.2s ease;
-}
-
-.primary-links a {
-  color: #4f46e5;
-}
-
-.primary-links a:hover {
-  color: #1e3a8a;
-}
-
-body.dark-mode .primary-links a {
-  color: #9bbcff;
-}
-
-body.dark-mode .primary-links a:hover {
-  color: #4f83f1;
-}
-
-.social-links a {
-  color: #1db954;
-}
-
-.social-links a:hover {
-  color: #12833a;
-}
-
-.social-links i,
-.social-links img.icon {
-  height: 1em;
-  vertical-align: middle;
-  margin-right: 0.3rem;
-  filter: none;
-}
-
-body.dark-mode .social-links img.icon {
-  filter: invert(1);
-}
-
-
-/* ------------ LINK CARD ------------ */
-.link-card {
-  background-color: rgba(240, 240, 255, 0.3);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-  max-width: 500px;
-  margin: 2.5rem auto 0 auto;
-  text-align: center;
-  backdrop-filter: blur(4px);
-}
-
-.link-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #444;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.link-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.link-list li {
-  margin: 0.6rem 0;
-}
-
-.link-list a {
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  color: #4f46e5;
-  transition: color 0.2s ease;
-}
-
-.link-list a:hover {
-  color: #1e3a8a;
-}
-
-.link-list i,
-.link-list img.icon {
-  margin-right: 0.5rem;
-  vertical-align: middle;
-  height: 1em;
-}
-
-body.dark-mode .link-card {
-  background-color: rgba(30, 30, 40, 0.4);
-}
-
-body.dark-mode .link-card h3 {
-  color: #ccc;
-}
-
-body.dark-mode .link-list a {
-  color: #9bbcff;
-}
-
-body.dark-mode .link-list a:hover {
-  color: #4f83f1;
-}
-
-body.dark-mode .link-list img.icon {
-  filter: invert(1);
+  color: #fff;
 }

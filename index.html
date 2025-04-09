@@ -17,33 +17,47 @@ The document's language is set to German (lang="de").
     crossorigin="anonymous" />
 
 </head>
+<div class="btn" id="theme-toggle">
+  <div class="btn__indicator">
+    <div class="btn__icon-container">
+      <i class="btn__icon fa-solid fa-sun"></i>
+    </div>
+  </div>
+</div>
 
 <body>
   <main class="container">
     <h1 class="hero-name">Guilherme Schmid</h1>
     <img src="attachments/pictures/tuebi.jpg" alt="Stadtbild" class="hero-image">
-    <p class="tagline">Physics student & hobby-developer</p>
+    <p class="tagline">physics student, hobby programmer, blog newbie.</p>
+
+    <section class="blog-highlight">
+      <h2 class="blog-title">
+        <a href="blog/index.html">Bored in Italy</a>
+      </h2>
+      <p class="blog-blurb">A slow blog about being (a little) bored abroad.</p>
+    </section>
 
     <div class="link-card">
-      <h3>Find me here</h3>
+      <h3>Elsewhere</h3>
       <ul class="link-list">
         <li><a href="https://github.com/guischmid" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
-        <li><a href="blog/index.html"><i class="fa-solid fa-pen-nib"></i> Blog: Bored in Italy</a></li>
-        <li><a href="https://open.spotify.com/user/guischmid" target="_blank"><i class="fa-brands fa-spotify"></i> Spotify</a></li>
-        <li><a href="https://letterboxd.com/gi_gi01/" target="_blank"><img src="attachments/pictures/letterboxd.svg" alt="Letterboxd" class="icon"> Letterboxd</a></li>
+        <li><a href="https://open.spotify.com/user/guischmid" target="_blank"><i class="fa-brands fa-spotify"></i>
+            Spotify</a></li>
+        <li>
+          <a href="https://letterboxd.com/gi_gi01/" target="_blank">
+            <span class="icon-wrapper">
+              <img src="attachments/pictures/letterboxd.svg" alt="Letterboxd" class="icon-svg" />
+            </span>
+            Letterboxd
+          </a>
+        </li>
       </ul>
     </div>
-    
 
-    <div class="btn" id="theme-toggle">
-      <div class="btn__indicator">
-        <div class="btn__icon-container">
-          <i class="btn__icon fa-solid fa-sun"></i>
-        </div>
-      </div>
-    </div>
 
   </main>
+
 </body>
 <script src="theme.js"></script>
 
