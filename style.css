@@ -85,6 +85,20 @@ body {
   gap: 0.8rem;
 }
 
+/* Light mode overrides for link card */
+body:not(.dark-mode) .link-card h3 {
+  color: #333; /* darker heading */
+}
+
+body:not(.dark-mode) .link-list a {
+  color: #2f45d4; /* deeper blue for links */
+}
+
+body:not(.dark-mode) .link-list a:hover {
+  color: #1a2ea6;
+}
+
+
 .link-list li {
   display: flex;
   align-items: center;
