@@ -240,3 +240,63 @@ body.dark-mode .btn__indicator {
 body.dark-mode .btn__icon {
   color: var(--dark-icon-color);
 }
+
+.link-section {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.primary-links,
+.social-links {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.primary-links a,
+.social-links a {
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.primary-links a {
+  color: #4f46e5;
+}
+
+.primary-links a:hover {
+  color: #1e3a8a;
+}
+
+body.dark-mode .primary-links a {
+  color: #9bbcff;
+}
+
+body.dark-mode .primary-links a:hover {
+  color: #4f83f1;
+}
+
+.social-links a {
+  color: #1db954;
+}
+
+.social-links a:hover {
+  color: #12833a;
+}
+
+.social-links i,
+.social-links img.icon {
+  height: 1em;
+  vertical-align: middle;
+  margin-right: 0.3rem;
+  filter: none;
+}
+
+body.dark-mode .social-links img.icon {
+  filter: invert(1);
+}
