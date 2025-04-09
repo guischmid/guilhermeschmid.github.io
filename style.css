@@ -109,7 +109,6 @@ body {
 .link-list img.icon {
   height: 1.1rem;
   width: 1.1rem;
-  vertical-align: middle;
   display: block;
 }
 
@@ -127,6 +126,7 @@ body {
 .icon-svg {
   height: 100%;
   width: 100%;
+  color: #4f83f1;
   display: block;
   filter: grayscale(1) brightness(1.2);
   opacity: 0.85;
