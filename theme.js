@@ -15,17 +15,17 @@ toggle.addEventListener("click", () => {
   // Animation
   icon.classList.add("animated");
 
-  // Icon wechseln
+  // Change Icon
   if (isDark) {
     icon.classList.replace("fa-sun", "fa-moon");
   } else {
     icon.classList.replace("fa-moon", "fa-sun");
   }
 
-  // Speichern
+  // Save to localStorage
   localStorage.setItem("theme", isDark ? "dark" : "light");
 
-  // Animation zurücksetzen
+  // Reset Animation
   setTimeout(() => {
     icon.classList.remove("animated");
   }, 500);
