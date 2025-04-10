@@ -466,3 +466,22 @@ body.dark-mode .site-footer a:hover {
   color: #4f83f1;
 }
 
+.made-with-love {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 0.85rem;
+  color: #888;
+  font-family: 'Inter', sans-serif;
+  z-index: 100;
+  opacity: 0.8;
+}
+
+.made-with-love:hover {
+  opacity: 1;
+}
+
+body.dark-mode .made-with-love {
+  color: #aaa;
+}
+
