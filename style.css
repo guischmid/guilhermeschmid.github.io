@@ -504,7 +504,7 @@ body.dark-mode .site-footer a:hover {
 }
 
 .made-with-love {
-  position: fixed;
+  position: static;
   bottom: 1rem;
   left: 1rem;
   font-size: 0.85rem;
