@@ -295,6 +295,26 @@ body.dark-mode .blog-blurb {
   color: #aaa;
 }
 
+/* ------------ BLOG LIST ------------ */
+.blog-list {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+
+.blog-list-item {
+  margin-bottom: 2rem;
+}
+
+.blog-list a {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.links {
+  margin-top: 2rem;
+}
+
 /* ------------ DARK MODE TOGGLE BUTTON ------------ */
 .btn {
   background-color: #fff;
